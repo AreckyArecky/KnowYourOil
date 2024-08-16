@@ -1,8 +1,5 @@
 package com.knowyouroil;
 
-import org.springframework.context.annotation.Bean;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
@@ -20,8 +17,8 @@ public class MeasureInterface {
             System.out.print(" RATIO IS 1:");
             double ratio = Double.valueOf(scanner.nextLine());
             System.out.println(" ");
-            OilMeasure measure = new OilMeasure();
-            double result = measure.measure(fuelAmt, ratio);
+            OilAmtCalculator calculator = new OilAmtCalculator();
+            double result = calculator.calculate(fuelAmt, ratio);
             System.out.println("YOU SHOULD ADD " + result + "ML TO YOUR FUEL.");
 
             System.out.println("MEASURE AGAIN? [Y/N]: ");
@@ -30,7 +27,6 @@ public class MeasureInterface {
                 System.out.println("THANK YOU AND GOODBYE! :)");
                 break;} else{
                 System.out.println("OKAY, LET'S TRY AGAIN.");
-                continue;
             }
 
         }
